@@ -1,0 +1,13 @@
+.page {
+  background-color: #fff;
+  width:1440px;
+  height:1416px;
+}
+
+
+
+
+.page__section{
+  max-width:1200px;
+  margin:0 auto;
+}

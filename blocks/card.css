@@ -1,0 +1,47 @@
+.card{
+width:413px;
+height:445px;
+
+}
+
+.card__image{
+  height: 413px;
+  width: 413px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin-bottom:10px;
+
+
+}
+
+
+.card__like-btn {
+  height:20px;
+  width:23px;
+  background-image: url(../images/like_icon.svg);
+  background-color: transparent;
+  border:none;
+  cursor: pointer;
+  opacity:40%;
+  transition: opacity 0.3s ease;
+}
+
+.card__content{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+
+}
+
+.card__title{
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media screen and (max-width:627px) {
+  .cards__image {
+    height:288px;
+}
+}
