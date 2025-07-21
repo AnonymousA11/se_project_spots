@@ -45,6 +45,12 @@
   border-style: none;
 }
 
+.profile__add-btn:hover{
+  cursor:pointer;
+  opacity:80%;
+
+}
+
 .profile__avatar {
   margin-right: 20px;
   border-radius: 3%;
@@ -67,6 +73,10 @@
   gap: 3px;
 }
 
+.profile__edit-btn:hover{
+  opacity:100%;
+  cursor:pointer;
+}
 
 @media screen and (max-width:627px){
   .profile{

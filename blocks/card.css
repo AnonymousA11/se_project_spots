@@ -1,8 +1,4 @@
-.card{
-width:413px;
-height:445px;
 
-}
 
 .card__image{
   height: 413px;
@@ -27,6 +23,10 @@ height:445px;
   transition: opacity 0.3s ease;
 }
 
+.card__like-btn:hover {
+    opacity:100%;
+}
+
 .card__content{
   display:flex;
   align-items:center;
@@ -41,7 +41,7 @@ height:445px;
 }
 
 @media screen and (max-width:627px) {
-  .cards__image {
+  .card__image {
     height:288px;
 }
 }
