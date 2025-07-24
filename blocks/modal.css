@@ -1,0 +1,106 @@
+/*TO DOS ADD CORRECT FONT STYLES FOR EVERYTHING*/
+
+/* TO DOS : RESPONSIVE DESIGN */
+.modal {
+  visibility: hidden;
+  background-color: #00000000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 300px) {
+  .modal__container {
+    padding: 16px;
+    margin:30px;
+  }
+}
+
+.modal_is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  position: relative;
+  max-width: 730px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 32px 50px;
+}
+
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 32px;
+  font-family:Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color:#212121B2;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  background-image: url(../images/close-icon.svg);
+  border-style:none;
+  background-color: transparent;
+  opacity:40%;
+
+  /* TO DOS : ADD CLOSE BTN ICON */
+}
+
+.modal__close-btn:hover {
+  cursor:pointer;
+  opacity:100%;
+}
+
+
+
+.modal__title {
+  margin: 0 0 32px;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size:32px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  display: block;
+  width:100%;
+  margin:8px 0 0;
+  font-family:Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 16px 12px;
+  /* TO DOS ADD BORDER STYLES AND PADDING*/
+
+}
+
+.modal__input::placeholder {
+  color: #2121214D;
+}
+
+.modal__save-btn{
+  width:156px;
+  border-radius:8px;
+  padding:18px 32px;
+  background-color: #212121;
+  color: #fff;
+}
+
+

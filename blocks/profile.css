@@ -126,3 +126,8 @@
     padding-top: 32px;
   }
 }
+
+
+profile-name-input{
+  display:flex;
+}
