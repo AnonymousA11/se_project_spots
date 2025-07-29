@@ -12,7 +12,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+
 }
 
 @media screen and (max-width: 300px) {
@@ -24,6 +26,8 @@
 
 .modal_is-opened {
   visibility: visible;
+  opacity:3;
+  transition: opacity 0.5s linear;
 }
 
 .modal__container {
@@ -57,7 +61,7 @@
   background-color: transparent;
   opacity:40%;
 
-  /* TO DOS : ADD CLOSE BTN ICON */
+
 }
 
 .modal__close-btn:hover {
