@@ -9,9 +9,9 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
-const newPostSaveBtn = document.querySelector(".modal__save-btn");
 const newPostImageInput = document.querySelector("#image-link-input");
 const newPostCaptionInput = document.querySelector("#post-caption-input");
+
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -62,8 +62,8 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
   // Log both input values to the console.
-  console.log(newPostCaptionInput.value);
-  console.log(newPostImageInput.value);
+  console.log(nameInput.value);
+  console.log(linkInput.value);
 
   // Close the modal.
   closeModal(newPostModal);
