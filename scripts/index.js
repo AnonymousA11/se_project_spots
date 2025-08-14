@@ -113,3 +113,13 @@ const loggedInitialCards = initialCards.forEach(function (card) {
 });
 
 console.log(loggedInitialCards);
+
+
+/* NEW OPEN/CLOSE MODAL FUNCTIONALITY ? */
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
