@@ -62,11 +62,6 @@
   background-color: transparent;
 }
 
-.card__delete-btn:hover {
-  background-image: url("../images/delete_active_hover.png");
-
-
-}
 
 .card__delete-btn_active:hover {
   background-image: url("../images/delete_active_hover.svg");
@@ -83,5 +78,6 @@
   .card__title {
   font-size: 16px;
 }
+
 
 }
