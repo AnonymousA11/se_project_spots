@@ -1,5 +1,9 @@
 const initialCards = [
   {
+    name: "Golden Gate bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/0-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -31,13 +35,14 @@ const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
+
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
 const newPostImageInput = document.querySelector("#image-link-input");
-const newPostCaptionInput = document.querySelector("#post-caption-input");
+const newPostCaptionInput = document.querySelector("#profile-caption-input");
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -46,6 +51,11 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const addCardFormElement = newPostModal.querySelector(".modal__form");
 const nameInput = newPostModal.querySelector("#profile-caption-input");
 const linkInput = newPostModal.querySelector("#image-link-input");
+
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+const previewImageEl = previewModal.querySelector(".modal__image");
+const previewNameEl = previewModal.querySelector(".modal__caption");
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -96,7 +106,15 @@ function handleAddCardSubmit(evt) {
 }
 
 // Create the submit listener.
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+addCardFormElement.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  const cardElement = getCardElement({
+    name: nameInput.value,
+    link: linkInput.value,
+  });
+  cardList.prepend(cardElement);
+});
 
 newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
@@ -112,14 +130,49 @@ const loggedInitialCards = initialCards.forEach(function (card) {
   console.log(card.name);
 });
 
-console.log(loggedInitialCards);
-
-
 /* NEW OPEN/CLOSE MODAL FUNCTIONALITY ? */
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
+// Removed duplicate openModal and closeModal function definitions.
+
+/* Card Template */
+const cardTemplate = document.querySelector("#card-template");
+const cardList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content.cloneNode(true);
+
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__title");
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+
+  const cardLikeBtnElement = cardElement.querySelector(".card__like-btn");
+  cardLikeBtnElement.addEventListener("click", () => {
+    cardLikeBtnElement.classList.toggle("card__like-btn_active");
+  });
+
+  const cardDeleteBtnElement = cardElement.querySelector(".card__delete-btn");
+  cardDeleteBtnElement.addEventListener("click", () => {
+    cardDeleteBtnElement.closest(".card").remove();
+  });
+
+  //image click listener
+  const imagePreview = cardElement.querySelector(".card__image");
+  imagePreview.addEventListener("click", () => {
+    const modalImage = document.querySelector("#modal__image");
+    modalImage.src = imagePreview.src;
+    openModal(document.querySelector("#modal__overlay"));
+  });
+
+
+
+  cardTitle.textContent = data.name;
+
+  return cardElement;
 }
 
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
-}
+initialCards.forEach(function (item) {
+  const cardElement = getCardElement(item);
+
+  cardList.prepend(cardElement);
+});
