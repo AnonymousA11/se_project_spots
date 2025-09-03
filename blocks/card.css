@@ -9,6 +9,7 @@
   object-fit: cover;
   display: block;
   margin-bottom: 10px;
+  cursor:pointer;
 }
 
 .card__like-btn {
@@ -60,6 +61,7 @@
   right:10px;
   top:10px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 

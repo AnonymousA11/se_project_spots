@@ -24,7 +24,7 @@
 
 .modal_is-opened {
   visibility: visible;
-  opacity:3;
+  opacity:1;
 
 }
 
@@ -34,7 +34,6 @@
   width: 100%;
   border-radius: 8px;
   background-color: #fff;
-  border-radius: 8px;
   padding: 32px 50px;
   box-sizing: border-box;
 }
@@ -57,6 +56,9 @@
 }
 
 .modal__close-btn {
+  cursor:pointer;
+  background-repeat:no-repeat;
+  background-size:auto;
   position: absolute;
   top: 58px;
   right: -50px;
@@ -168,7 +170,12 @@
   border-radius: 8px;
 }
 
+.modal__close_type_preview{
+  top:11px;
+  right: -41.5px;
+}
+
 .modal_close_type_preview{
-  top:58px;
-  right: -52.5px;
+  top:11px;
+  right: -41.5px;
 }

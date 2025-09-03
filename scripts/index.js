@@ -1,8 +1,5 @@
 const initialCards = [
-  {
-    name: "Golden Gate bridge",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/0-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
+
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -52,8 +49,15 @@ const addCardFormElement = newPostModal.querySelector(".modal__form");
 const nameInput = newPostModal.querySelector("#profile-caption-input");
 const linkInput = newPostModal.querySelector("#image-link-input");
 
-const previewModal = document.querySelector("#preview-modal");
+const previewModal = document.querySelector("#modal__overlay");
+
+
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+
+previewModalCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
+});
+
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewNameEl = previewModal.querySelector(".modal__caption");
 
@@ -114,6 +118,8 @@ addCardFormElement.addEventListener("submit", function (evt) {
     link: linkInput.value,
   });
   cardList.prepend(cardElement);
+  closeModal(newPostModal)
+  addCardFormElement.reset()
 });
 
 newPostBtn.addEventListener("click", function () {
@@ -122,6 +128,10 @@ newPostBtn.addEventListener("click", function () {
 
 newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
+});
+
+previewModalCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
 });
 
 editProfileForm.addEventListener("submit", handleProfileFormSubmit);
@@ -161,6 +171,11 @@ function getCardElement(data) {
   imagePreview.addEventListener("click", () => {
     const modalImage = document.querySelector("#modal__image");
     modalImage.src = imagePreview.src;
+    modalImage.alt = imagePreview.alt;
+
+    const modalCaption = document.querySelector("#modal__caption");
+    modalCaption.textContent = imagePreview.alt;
+
     openModal(document.querySelector("#modal__overlay"));
   });
 

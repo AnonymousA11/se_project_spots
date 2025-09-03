@@ -94,8 +94,9 @@
   }
 
   .profile__add-btn {
+    cursor:pointer;
     margin: 0;
-    width: 288px;
+    width: 100%;
     height: 52px;
     opacity: 1;
     padding-top: 18px;
@@ -130,6 +131,6 @@
 }
 
 
-profile-name-input{
+.profile-name-input{
   display:flex;
 }
