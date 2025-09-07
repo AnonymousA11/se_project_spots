@@ -3,7 +3,7 @@
 /* TO DOS : RESPONSIVE DESIGN */
 .modal {
   visibility: hidden;
-  background-color: #00000000;
+  background-color: #000000b2;
   position: fixed;
   top: 0;
   right: 0;
@@ -15,17 +15,29 @@
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 0 10px;
+}
+.modal__caption {
+  margin-top: 5px;
+  font-family: Poppins;
+  display:inline-block;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 8px;
+  font-style: Medium;
+  font-size: 10px;
+  text-align: left;
+  background-color: #212121;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
 
 }
 
-.modal_close_type_preview {
-  padding: 0 16px;
-}
+
 
 .modal_is-opened {
   visibility: visible;
-  opacity:1;
-
+  opacity: 1;
 }
 
 .modal__container {
@@ -45,45 +57,47 @@
   box-sizing: border-box;
 }
 
+.modal__close_type_preview {
+  position:absolute;
+  top: 6px;
+  right: -90.5px;
+}
+
 .modal__label {
   display: flex;
   flex-direction: column;
   margin: 0 0 32px;
-  font-family:Poppins, sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color:#212121B2;
+  color: #212121b2;
 }
 
 .modal__close-btn {
-  cursor:pointer;
-  background-repeat:no-repeat;
-  background-size:auto;
+  position:absolute;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: auto;
   position: absolute;
-  top: 58px;
+  top: -5px;
   right: -50px;
   height: 40px;
   width: 40px;
   background-image: url(../images/close_image-preview.svg);
-  border-style:none;
+  border-style: none;
   background-color: transparent;
-
-
-
 }
 
 .modal__close-btn:hover {
-  cursor:pointer;
-  opacity:100%;
+  cursor: pointer;
+  opacity: 100%;
 }
-
-
 
 .modal__title {
   margin: 0 0 32px;
   font-family: Poppins, sans-serif;
   font-weight: 500;
-  font-size:32px;
+  font-size: 32px;
 }
 
 .modal__form {
@@ -93,89 +107,106 @@
 
 .modal__input {
   display: block;
-  width:100%;
-  margin:8px 0 0;
-  font-family:Poppins, sans-serif;
+  width: 100%;
+  margin: 8px 0 0;
+  font-family: Poppins, sans-serif;
   font-weight: 500;
   font-size: 20px;
   border-radius: 8px;
   padding: 16px 12px;
-  box-sizing:border-box;
+  box-sizing: border-box;
   /* TO DOS ADD BORDER STYLES AND PADDING*/
-
 }
 
 .modal__input::placeholder {
-  color: #2121214D;
+  color: #2121214d;
 }
 
-.modal__save-btn{
-  width:156px;
-  border-radius:8px;
-  padding:18px 32px;
+.modal__save-btn {
+  width: 156px;
+  border-radius: 8px;
+  padding: 18px 32px;
   background-color: #212121;
   color: #fff;
 }
 
 .modal__save-btn:hover {
   cursor: pointer;
-
 }
-
 
 @media screen and (max-width: 400px) {
+  .modal__caption {
+    margin-top: 5px;
+    max-width: 100%;
+    top: 30px;
+    padding: 5px 5px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+  }
+
   .modal__close_type_preview {
-    top:-48px;
-    right:0px;
+    padding: 0 16px;
+    top: 6px;
+    right: 56.5px;
+  }
+  .modal__close-btn {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: absolute;
+    top: 58px;
+    right: 50px;
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/close_image-preview.svg);
+    border-style: none;
+    background-color: transparent;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 780px) {
   .modal__container {
     padding: 22px 12px 12px;
-    width:100%;
-
-
+    width: 100%;
   }
 
-  .modal__title{
+  .modal__close_type_preview {
+  position:absolute;
+  right:20px;
+
+}
+
+  .modal__title {
     font-size: 20px;
   }
 
-  .modal__input{
-    font-size:16px;
-
+  .modal__input {
+    font-size: 16px;
   }
 
-  .modal__close-btn{
-    width:40px;
-    height:40px;
-    top:10px;
-    right:10px;
-    bottom:10px;
+  .modal__close-btn {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
   }
 
-  .modal__save-btn{
-    width:100%;
+  .modal__save-btn {
+    width: 100%;
   }
+
 
 }
 
-.modal__image{
+.modal__image {
   max-width: 80vw;
   max-height: 80vh;
   object-fit: contain;
-  width:100%;
+  width: 100%;
   display: block;
   border-radius: 8px;
 }
 
-.modal__close_type_preview{
-  top:11px;
-  right: -41.5px;
-}
-
-.modal_close_type_preview{
-  top:11px;
-  right: -41.5px;
-}

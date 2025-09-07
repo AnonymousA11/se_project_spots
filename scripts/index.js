@@ -168,13 +168,14 @@ function getCardElement(data) {
 
   //image click listener
   const imagePreview = cardElement.querySelector(".card__image");
+
   imagePreview.addEventListener("click", () => {
     const modalImage = document.querySelector("#modal__image");
     modalImage.src = imagePreview.src;
     modalImage.alt = imagePreview.alt;
 
-    const modalCaption = document.querySelector("#modal__caption");
-    modalCaption.textContent = imagePreview.alt;
+
+    previewNameEl.textContent = imagePreview.alt;
 
     openModal(document.querySelector("#modal__overlay"));
   });
