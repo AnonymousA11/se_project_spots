@@ -18,22 +18,20 @@
 }
 .modal__caption {
   margin-top: 5px;
-  font-family: Poppins;
-  display:inline-block;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  display: inline-block;
   font-weight: 500;
   color: #ffffff;
   border-radius: 8px;
-  font-style: Medium;
-  font-size: 10px;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
   text-align: left;
   background-color: #212121;
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
-
 }
-
-
 
 .modal_is-opened {
   visibility: visible;
@@ -58,7 +56,7 @@
 }
 
 .modal__close_type_preview {
-  position:absolute;
+  position: absolute;
   top: 6px;
   right: -90.5px;
 }
@@ -74,7 +72,7 @@
 }
 
 .modal__close-btn {
-  position:absolute;
+  position: absolute;
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: auto;
@@ -83,7 +81,7 @@
   right: -50px;
   height: 40px;
   width: 40px;
-  background-image: url(../images/close_image-preview.svg);
+  background-image: url(../images/dark_close_icon.svg);
   border-style: none;
   background-color: transparent;
 }
@@ -132,51 +130,27 @@
 
 .modal__save-btn:hover {
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (max-width: 400px) {
   .modal__caption {
-    margin-top: 5px;
     max-width: 100%;
     top: 30px;
     padding: 5px 5px;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
   }
 
-  .modal__close_type_preview {
-    padding: 0 16px;
-    top: 6px;
-    right: 56.5px;
-  }
   .modal__close-btn {
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-size: auto;
-    position: absolute;
     top: 58px;
     right: 50px;
-    height: 40px;
-    width: 40px;
     background-image: url(../images/close_image-preview.svg);
-    border-style: none;
-    background-color: transparent;
   }
 }
 
 @media screen and (max-width: 780px) {
   .modal__container {
     padding: 22px 12px 12px;
-    width: 100%;
   }
-
-  .modal__close_type_preview {
-  position:absolute;
-  right:20px;
-
-}
 
   .modal__title {
     font-size: 20px;
@@ -187,18 +161,13 @@
   }
 
   .modal__close-btn {
-    width: 40px;
-    height: 40px;
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 5px;
+    right: -40px;
   }
 
   .modal__save-btn {
     width: 100%;
   }
-
-
 }
 
 .modal__image {
@@ -209,4 +178,3 @@
   display: block;
   border-radius: 8px;
 }
-

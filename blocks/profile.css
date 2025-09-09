@@ -5,6 +5,15 @@
   padding: 34px 0 20px;
   border-bottom: 1px solid #21212166;
 }
+
+.profile__description {
+  height: 16px;
+  width: 105px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #212121b2;
+}
 .profile__name {
   margin: 0 0 12px;
   font-family: Poppins, sans-serif;
@@ -94,7 +103,7 @@
   }
 
   .profile__add-btn {
-    cursor:pointer;
+    cursor: pointer;
     margin: 0;
     width: 100%;
     height: 52px;
@@ -102,11 +111,9 @@
     padding-top: 18px;
     gap: 8px;
     border-radius: 8px;
-    padding:18px 0 ;
+    padding: 18px 0;
     justify-content: center;
   }
-
-
 
   .profile__name {
     font-size: 20px;
@@ -130,7 +137,6 @@
   }
 }
 
-
-.profile-name-input{
-  display:flex;
+.profile-name-input {
+  display: flex;
 }

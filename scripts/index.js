@@ -1,5 +1,4 @@
 const initialCards = [
-
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -51,7 +50,6 @@ const linkInput = newPostModal.querySelector("#image-link-input");
 
 const previewModal = document.querySelector("#modal__overlay");
 
-
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 
 previewModalCloseBtn.addEventListener("click", function () {
@@ -96,19 +94,6 @@ editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
-// Create the form submission handler.
-function handleAddCardSubmit(evt) {
-  // Prevent default browser behavior.
-  evt.preventDefault();
-
-  // Log both input values to the console.
-  console.log(nameInput.value);
-  console.log(linkInput.value);
-
-  // Close the modal.
-  closeModal(newPostModal);
-}
-
 // Create the submit listener.
 addCardFormElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
@@ -118,8 +103,8 @@ addCardFormElement.addEventListener("submit", function (evt) {
     link: linkInput.value,
   });
   cardList.prepend(cardElement);
-  closeModal(newPostModal)
-  addCardFormElement.reset()
+  closeModal(newPostModal);
+  addCardFormElement.reset();
 });
 
 newPostBtn.addEventListener("click", function () {
@@ -135,10 +120,6 @@ previewModalCloseBtn.addEventListener("click", function () {
 });
 
 editProfileForm.addEventListener("submit", handleProfileFormSubmit);
-
-const loggedInitialCards = initialCards.forEach(function (card) {
-  console.log(card.name);
-});
 
 /* NEW OPEN/CLOSE MODAL FUNCTIONALITY ? */
 // Removed duplicate openModal and closeModal function definitions.
@@ -174,13 +155,10 @@ function getCardElement(data) {
     modalImage.src = imagePreview.src;
     modalImage.alt = imagePreview.alt;
 
-
     previewNameEl.textContent = imagePreview.alt;
 
     openModal(document.querySelector("#modal__overlay"));
   });
-
-
 
   cardTitle.textContent = data.name;
 
