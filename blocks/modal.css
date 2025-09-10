@@ -19,6 +19,7 @@
 .modal__caption {
   margin-top: 5px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
+  padding: 4px 8px;
   display: inline-block;
   font-weight: 500;
   color: #ffffff;
@@ -55,7 +56,8 @@
   box-sizing: border-box;
 }
 
-.modal__close_type_preview {
+.modal__close-btn_type_preview {
+  background-image: url("../images/close_image-preview.svg");
   position: absolute;
   top: 6px;
   right: -90.5px;
@@ -74,6 +76,7 @@
 .modal__close-btn {
   position: absolute;
   cursor: pointer;
+  opacity:0.4;
   background-repeat: no-repeat;
   background-size: auto;
   position: absolute;
@@ -81,7 +84,7 @@
   right: -50px;
   height: 40px;
   width: 40px;
-  background-image: url(../images/dark_close_icon.svg);
+  background-image: url(../images/close-icon.svg);
   border-style: none;
   background-color: transparent;
 }
@@ -143,7 +146,8 @@
   .modal__close-btn {
     top: 58px;
     right: 50px;
-    background-image: url(../images/close_image-preview.svg);
+
+
   }
 }
 

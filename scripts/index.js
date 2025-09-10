@@ -37,8 +37,8 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
-const newPostImageInput = document.querySelector("#image-link-input");
-const newPostCaptionInput = document.querySelector("#profile-caption-input");
+
+
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -56,7 +56,7 @@ previewModalCloseBtn.addEventListener("click", function () {
   closeModal(previewModal);
 });
 
-const previewImageEl = previewModal.querySelector(".modal__image");
+
 const previewNameEl = previewModal.querySelector(".modal__caption");
 
 const profileName = document.querySelector(".profile__name");
