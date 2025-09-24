@@ -64,8 +64,9 @@
 }
 
 .modal__label {
-  display: flex;
+  display: block;
   flex-direction: column;
+  margin-bottom:32px;
   margin: 0 0 32px;
   font-family: Poppins, sans-serif;
   font-weight: 500;
@@ -119,10 +120,24 @@
   /* TO DOS ADD BORDER STYLES AND PADDING*/
 }
 
+.modal__input_state_error {
+  border: 1px solid #FF0000;
+}
+
 .modal__input::placeholder {
   color: #2121214d;
 }
 
+.modal__error {
+  display:block;
+  margin-top:8px;
+  color:#FF0000;
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+}
 .modal__save-btn {
   width: 156px;
   border-radius: 8px;
@@ -131,9 +146,16 @@
   color: #fff;
 }
 
-.modal__save-btn:hover {
+
+
+.modal__save-btn_disabled {
+  background-color: #212121;
+  opacity:50%;
+  width: 156px;
+  border-radius: 8px;
+  border:none;
+  padding: 18px 32px;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (max-width: 400px) {

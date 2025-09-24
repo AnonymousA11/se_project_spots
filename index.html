@@ -80,8 +80,13 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span id="profile-name-input-error" class="modal__error"></span>
             </label>
+            <span class= "modal__error"></span>
 
             <label for="profile-description-input" class="modal__label">
               Description
@@ -90,7 +95,11 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                minlength="2"
+                maxlength="200"
+                required
               />
+              <span id="profile-description-input-error" class="modal__error"></span>
             </label>
 
             <button type="submit" class="modal__save-btn">Save</button>
@@ -112,7 +121,9 @@
                 type="url"
                 class="modal__input"
                 placeholder="Place a link to the picture"
+                required
               />
+              <span id="image-link-input-error" class="modal__error"></span>
             </label>
 
             <!-- TO DO: UPDATE LABEL INPUT PAIR -->
@@ -123,8 +134,14 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                minlength="2"
+                maxlength="30"
+                required
+
               />
+              <span id="profile-caption-input-error" class="modal__error"></span>
             </label>
+
 
             <button type="submit" class="modal__save-btn">Save</button>
           </form>
@@ -143,5 +160,6 @@
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
