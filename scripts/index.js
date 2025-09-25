@@ -53,9 +53,7 @@ const previewModal = document.querySelector("#modal__overlay");
 
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 
-previewModalCloseBtn.addEventListener("click", function () {
-  closeModal(previewModal);
-});
+
 
 const previewNameEl = previewModal.querySelector(".modal__caption");
 
@@ -154,6 +152,7 @@ newPostModal.addEventListener("click", function (evt) {
 });
 
 newPostBtn.addEventListener("click", function () {
+  resetValidation(addCardFormElement, settings);
   openModal(newPostModal);
 });
 

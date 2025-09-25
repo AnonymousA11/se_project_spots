@@ -81,8 +81,8 @@
   background-repeat: no-repeat;
   background-size: auto;
   position: absolute;
-  top: -5px;
-  right: -50px;
+  top: 40px;
+  right: 40px;
   height: 40px;
   width: 40px;
   background-image: url(../images/close-icon.svg);
