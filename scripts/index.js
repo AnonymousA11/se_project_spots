@@ -63,27 +63,30 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
 //escape key functionality
-const previewModalKeydownHandler = function (evt) {
+
+document.addEventListener("keydown", handleEscapeKey);
+
+function handleEscapeKey(evt) {
   if (evt.key === "Escape") {
-    closeModal(previewModal);
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
   }
-};
+}
+
+
+
+
 
 //Open/Close modal functionality
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-
-  if (modal === previewModal) {
-    document.addEventListener("keydown", previewModalKeydownHandler);
-  }
 }
-
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 
-  if (modal === previewModal) {
-    document.removeEventListener("keydown", previewModalKeydownHandler);
-  }
+
 }
 
 // Create the form submission handler for editing profile.
@@ -99,16 +102,7 @@ function handleProfileFormSubmit(evt) {
   closeModal(editProfileModal);
 }
 
-function handleCardFormSubmit(evt) {
-  evt.preventDefault();
-  const values = { name: nameInput.value, link: linkInput.value };
-  const cardElement = getCardElement(values);
-  cardList.prepend(cardElement);
-  evt.target.reset();
-  disableBtnState(cardSubmitBtn);
-  toggleButtonState([nameInput, linkInput], cardSubmitBtn);
-  closeModal(newPostModal);
-}
+
 
 editProfileModal.addEventListener("click", function (evt) {
   if (evt.target === editProfileModal) {

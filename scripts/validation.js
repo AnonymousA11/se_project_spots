@@ -1,6 +1,3 @@
-
-
-
 // Declaring a configuration object that contains the
 // necessary classes and selectors.
 const settings = {
@@ -10,13 +7,10 @@ const settings = {
   inactiveButtonClass: "modal__save-btn_disabled",
   inputErrorClass: "modal__input_state_error",
   errorClass: "modal__error",
-
 };
 
 console.log(settings);
 // Passing the configuration object to enableValidation when we call it.
-
-
 
 const showInputError = (formEl, inputEl, errorMessage) => {
   const errorMessageID = inputEl.id + "-error";
@@ -50,8 +44,6 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
-
-
 const disableBtnState = (buttonEl) => {
   buttonEl.disabled = true;
 };
@@ -64,7 +56,9 @@ const resetValidation = (formEl, inputList) => {
 
 const setEventListeners = (formElement, config) => {
   const submitButtonSelector = document.querySelector(".modal__save-btn");
-  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector)
+  );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
   console.log(inputList);
   console.log(buttonElement);
@@ -94,6 +88,5 @@ const enableValidation = (config) => {
     // Form submission logic
   });
 };
-
 
 enableValidation(settings);

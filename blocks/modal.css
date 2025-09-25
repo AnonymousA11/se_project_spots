@@ -66,7 +66,7 @@
 .modal__label {
   display: block;
   flex-direction: column;
-  margin-bottom:32px;
+  margin-bottom: 32px;
   margin: 0 0 32px;
   font-family: Poppins, sans-serif;
   font-weight: 500;
@@ -77,7 +77,7 @@
 .modal__close-btn {
   position: absolute;
   cursor: pointer;
-  opacity:0.4;
+  opacity: 0.4;
   background-repeat: no-repeat;
   background-size: auto;
   position: absolute;
@@ -121,7 +121,7 @@
 }
 
 .modal__input_state_error {
-  border: 1px solid #FF0000;
+  border: 1px solid #ff0000;
 }
 
 .modal__input::placeholder {
@@ -129,14 +129,13 @@
 }
 
 .modal__error {
-  display:block;
-  margin-top:8px;
-  color:#FF0000;
+  display: block;
+  margin-top: 8px;
+  color: #ff0000;
   font-family: Poppins;
   font-weight: 500;
   font-style: Medium;
   font-size: 16px;
-
 }
 .modal__save-btn {
   width: 156px;
@@ -146,14 +145,12 @@
   color: #fff;
 }
 
-
-
 .modal__save-btn_disabled {
   background-color: #212121;
-  opacity:50%;
+  opacity: 50%;
   width: 156px;
   border-radius: 8px;
-  border:none;
+  border: none;
   padding: 18px 32px;
   cursor: pointer;
 }
@@ -168,8 +165,6 @@
   .modal__close-btn {
     top: 58px;
     right: 50px;
-
-
   }
 }
 
