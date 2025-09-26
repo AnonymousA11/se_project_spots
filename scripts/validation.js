@@ -39,13 +39,15 @@ const checkInputValidity = (formEl, inputEl) => {
 
 const toggleButtonState = (inputList, buttonElement) => {
   if (inputList.some((inputEl) => !inputEl.validity.valid)) {
-    buttonElement.classList.add("modal__save-btn_disabled");
+    buttonElement.classList.add(settings.inactiveButtonClass);
     buttonElement.disabled = true;
   } else {
-    buttonElement.classList.add(settings.inactiveButtonClass)
+    buttonElement.classList.remove(settings.inactiveButtonClass); // remove instead of add
     buttonElement.disabled = false;
   }
 };
+
+
 
 const disableBtnState = (buttonEl) => {
   buttonEl.disabled = true;
@@ -54,7 +56,11 @@ const disableBtnState = (buttonEl) => {
 const resetValidation = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   inputList.forEach((inputEl) => hideInputError(formEl, inputEl));
+
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
+  toggleButtonState(inputList, buttonElement); // <-- reset button state
 };
+
 
 const setEventListeners = (formElement, config) => {
   const submitButtonSelector = formElement.querySelector(config.submitButtonSelector);
