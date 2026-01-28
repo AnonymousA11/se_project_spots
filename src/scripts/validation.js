@@ -1,6 +1,6 @@
 // Declaring a configuration object that contains the
 // necessary classes and selectors.
-const settings = {
+export const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save-btn",
@@ -9,13 +9,12 @@ const settings = {
   errorClass: "modal__error",
 };
 
-console.log(settings);
-// Passing the configuration object to enableValidation when we call it.
+
 
 const showInputError = (formEl, inputEl, errorMessage) => {
   const errorMessageID = inputEl.id + "-error";
   const errorMessageElement = document.querySelector(`#${errorMessageID}`);
-  errorMessageElement.classList.add(settings.errorClass);
+  errorMessageElement.classList.add(validationConfig.errorClass);
   errorMessageElement.textContent = errorMessage;
   inputEl.classList.add("modal__input_state_error");
 };
@@ -23,9 +22,9 @@ const showInputError = (formEl, inputEl, errorMessage) => {
 const hideInputError = (formEl, inputEl) => {
   const errorMessageID = inputEl.id + "-error";
   const errorMessageElement = document.querySelector(`#${errorMessageID}`);
-  inputEl.classList.add(settings.inputErrorClass);
-  errorMessageElement.classList.remove(settings.errorClass);
-  errorMessageElement.textContent = "";
+  inputEl.classList.remove(validationConfig.inputErrorClass);
+  errorMessageElement.classList.remove(validationConfig.errorClass);
+  errorMessageElement.textContent = " ";
   inputEl.classList.remove("modal__input_state_error");
 };
 
@@ -39,21 +38,21 @@ const checkInputValidity = (formEl, inputEl) => {
 
 const toggleButtonState = (inputList, buttonElement) => {
   if (inputList.some((inputEl) => !inputEl.validity.valid)) {
-    buttonElement.classList.add(settings.inactiveButtonClass);
+    buttonElement.classList.add(validationConfig.inactiveButtonClass);
     buttonElement.disabled = true;
   } else {
-    buttonElement.classList.remove(settings.inactiveButtonClass); // remove instead of add
+    buttonElement.classList.remove(validationConfig.inactiveButtonClass); // remove instead of add
     buttonElement.disabled = false;
   }
 };
 
 
 
-const disableBtnState = (buttonEl) => {
+export const disableBtnState = (buttonEl) => {
   buttonEl.disabled = true;
 };
 
-const resetValidation = (formEl, config) => {
+export const resetValidation = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   inputList.forEach((inputEl) => hideInputError(formEl, inputEl));
 
@@ -87,7 +86,7 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   console.log(config.formSelector);
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   // Debugging statement removed for production
@@ -97,4 +96,4 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(settings);
+

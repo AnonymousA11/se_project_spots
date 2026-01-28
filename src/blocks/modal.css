@@ -16,11 +16,15 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 0 10px;
 }
+
+
+
 .modal__caption {
+  position:relative;
   margin-top: 5px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   padding: 4px 8px;
-  display: inline-block;
+  display: block;
   font-weight: 500;
   color: #ffffff;
   border-radius: 8px;
@@ -49,6 +53,30 @@
   box-sizing: border-box;
 }
 
+.modal__container-delete {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  height:172px;
+  width: 630px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+  top:70px;
+  padding: 32px 50px;
+}
+
+.modal__close-container{
+  max-height:200px;
+  max-width: 630px;
+  border-radius: 8px;
+  background-color: #fff;
+
+
+
+}
+
+
 .modal__image-container {
   position: relative;
   max-width: 90vw;
@@ -56,11 +84,19 @@
   box-sizing: border-box;
 }
 
-.modal__close-btn_type_preview {
-  background-image: url("../images/close_image-preview.svg");
+.modal__close_type_preview {
+  background-image: url("../images/delete__modal-close.svg");
   position: absolute;
-  top: 6px;
-  right: -90.5px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: transparent;
+  cursor: pointer;
+  top: -12px;
+  right: -44px;
+  height: 32px;
+  width: 32px;
+  border-style: none;
+
 }
 
 .modal__label {
@@ -74,14 +110,34 @@
   color: #212121b2;
 }
 
+#delete-modal {
+  display:flex;
+  justify-content: center;
+  border-radius: 8px;
+  gap: 32px;
+
+}
+
+.modal__close-delete {
+  position:relative;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-image: url(../images/new__delete-close.svg);
+  border-style: none;
+  background-color: transparent;
+  right:20px;
+  height:40px;
+  width:40px;
+
+}
+
 .modal__close-btn {
   position: absolute;
   cursor: pointer;
   opacity: 0.4;
   background-repeat: no-repeat;
   background-size: auto;
-  position: absolute;
-  top: 40px;
+  top: 37px;
   right: 40px;
   height: 40px;
   width: 40px;
@@ -89,6 +145,7 @@
   border-style: none;
   background-color: transparent;
 }
+
 
 .modal__close-btn:hover {
   cursor: pointer;
@@ -102,9 +159,28 @@
   font-size: 32px;
 }
 
+h3.modal__title {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
 .modal__form {
   display: flex;
   flex-direction: column;
+
+}
+
+
+
+.modal__form-close {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
 }
 
 .modal__input {
@@ -117,7 +193,7 @@
   border-radius: 8px;
   padding: 16px 12px;
   box-sizing: border-box;
-  /* TO DOS ADD BORDER STYLES AND PADDING*/
+  border: 1px solid #21212166;
 }
 
 .modal__input_state_error {
@@ -138,6 +214,38 @@
   font-size: 16px;
 }
 .modal__save-btn {
+  cursor:pointer;
+  width: 156px;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 18px 32px;
+  background-color: #212121;
+  color: #fff;
+}
+
+.modal__delete-btn {
+  width: 156px;
+  border-radius: 8px;
+  padding: 18px 32px;
+  background-color: #fff;
+
+}
+
+.modal__delete-btn:hover {
+  cursor: pointer;
+  background-color: #ff0000;
+  color: #212121;
+}
+
+.modal__cancel-btn:hover {
+  cursor: pointer;
+  background-color: #424242;
+  color: #fff;
+}
+
+.modal__cancel-btn {
   width: 156px;
   border-radius: 8px;
   padding: 18px 32px;
@@ -191,6 +299,17 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .modal__container {
+    width: 300px;
+
+  }
+  .modal__close-btn {
+    top: 12px;
+    right: 4px;
+
+}
+
 .modal__image {
   max-width: 80vw;
   max-height: 80vh;
@@ -198,4 +317,7 @@
   width: 100%;
   display: block;
   border-radius: 8px;
+}
+
+
 }
