@@ -13,14 +13,14 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   padding: 0 10px;
 }
 
-
-
 .modal__caption {
-  position:relative;
+  position: relative;
   margin-top: 5px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   padding: 4px 8px;
@@ -35,7 +35,7 @@
   background-color: #212121;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 100%;
+  max-width: max-content;
 }
 
 .modal_is-opened {
@@ -55,32 +55,35 @@
 
 .modal__container-delete {
   position: relative;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  height:172px;
+  height: 172px;
   width: 630px;
   border-radius: 8px;
   background-color: #fff;
   box-sizing: border-box;
-  top:70px;
+  top: 70px;
   padding: 32px 50px;
 }
 
-.modal__close-container{
-  max-height:200px;
+.modal__close-container {
+  max-height: 200px;
   max-width: 630px;
   border-radius: 8px;
   background-color: #fff;
-
-
-
 }
 
+.modal__image {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
 
 .modal__image-container {
   position: relative;
-  max-width: 90vw;
-  max-height: 80vh;
   box-sizing: border-box;
 }
 
@@ -96,7 +99,6 @@
   height: 32px;
   width: 32px;
   border-style: none;
-
 }
 
 .modal__label {
@@ -111,24 +113,22 @@
 }
 
 #delete-modal {
-  display:flex;
+  display: flex;
   justify-content: center;
   border-radius: 8px;
   gap: 32px;
-
 }
 
 .modal__close-delete {
-  position:relative;
+  position: relative;
   cursor: pointer;
   background-repeat: no-repeat;
   background-image: url(../images/new__delete-close.svg);
   border-style: none;
   background-color: transparent;
-  right:20px;
-  height:40px;
-  width:40px;
-
+  right: 20px;
+  height: 40px;
+  width: 40px;
 }
 
 .modal__close-btn {
@@ -145,7 +145,6 @@
   border-style: none;
   background-color: transparent;
 }
-
 
 .modal__close-btn:hover {
   cursor: pointer;
@@ -172,10 +171,7 @@ h3.modal__title {
 .modal__form {
   display: flex;
   flex-direction: column;
-
 }
-
-
 
 .modal__form-close {
   display: flex;
@@ -214,7 +210,7 @@ h3.modal__title {
   font-size: 16px;
 }
 .modal__save-btn {
-  cursor:pointer;
+  cursor: pointer;
   width: 156px;
   font-family: Poppins, sans-serif;
   font-weight: 500;
@@ -230,7 +226,6 @@ h3.modal__title {
   border-radius: 8px;
   padding: 18px 32px;
   background-color: #fff;
-
 }
 
 .modal__delete-btn:hover {
@@ -302,22 +297,18 @@ h3.modal__title {
 @media screen and (max-width: 320px) {
   .modal__container {
     width: 300px;
-
   }
   .modal__close-btn {
     top: 12px;
     right: 4px;
+  }
 
-}
-
-.modal__image {
-  max-width: 80vw;
-  max-height: 80vh;
-  object-fit: contain;
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-}
-
-
+  .modal__image {
+    max-width: 80vw;
+    max-height: 80vh;
+    object-fit: contain;
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+  }
 }

@@ -141,6 +141,9 @@ function handleDeleteCard(evt,cardElement, cardId) {
 
 
 
+
+
+
 modalPreviewBtn.addEventListener("click", function () {
   closeModal(previewModal);
 });
@@ -362,7 +365,6 @@ deleteCancelBtn.addEventListener("click", function () {
 deleteCloseBtn.addEventListener("click", function () {
   closeModal(deleteModal);
 });
-
 
 
 
