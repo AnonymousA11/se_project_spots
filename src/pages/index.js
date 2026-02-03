@@ -78,7 +78,7 @@ const profileDescription = document.querySelector(".profile__description");
 let selectedCard, selectedCardId;
 
 
-/*api.getUserInfo()
+api.getUserInfo()
   .then((userData) => {
     console.log("user data: " + JSON.stringify(userData));
     const profileName = document.querySelector(".profile__name");
@@ -96,13 +96,13 @@ let selectedCard, selectedCardId;
   });
 
   api.editAvatar({
-    avatar: "https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png",
+    avatar: avatarLinkInput.value,
   }).then((userData) => {
     const avatarImage = document.querySelector(".profile__avatar");
     avatarImage.src = userData.avatar;
   }).catch((err) => {
     console.log(`Error: ${err}`);
-  }); */
+  });
 
 
 
@@ -301,13 +301,15 @@ addCardFormElement.addEventListener("submit", function (evt) {
     name: nameInput.value,
     link: linkInput.value,
   });
+
+
+
   cardList.prepend(cardElement);
   evt.target.reset();
   disableBtnState(cardSubmitBtn);
   closeModal(newPostModal);
   addCardFormElement.reset();
 });
-
 
 
 
