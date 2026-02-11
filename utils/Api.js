@@ -37,10 +37,9 @@ class Api {
   }
 
   changeLikeStatus(id, isLiked) {
-
-
+    const method = isLiked ? "DELETE" : "PUT";
     return fetch(`${this.baseUrl}/cards/${id}/likes`, {
-      method: "PUT",
+      method: method,
       headers: this.headers,
     }).then((res) => {
       if (res.ok) {
@@ -87,9 +86,7 @@ class Api {
 
   getAllCards() {
     return fetch(`${this.baseUrl}/cards`, {
-      method: "GET",
       headers: this.headers,
-      body: JSON.stringify(),
     }).then(this._handleServerResponse);
   }
 
@@ -115,7 +112,7 @@ class Api {
   }
 
   dislikeCard(id) {
-    return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
+    return fetch(`${this.baseUrl}/cards/${id}/likes`, {
       method: "DELETE",
       headers: this.headers,
     }).then(this._handleServerResponse);

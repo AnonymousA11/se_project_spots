@@ -10,7 +10,7 @@ import { setBtnText } from "../../utils/helpers.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "26ef0769-3efd-4a7c-a3e3-26a1547779aa",
+    authorization: "9a0ec663-61a3-48f8-9cd5-f2a666bc8cc7",
     "Content-Type": "application/json",
   },
 });
@@ -76,6 +76,8 @@ const profileDescription = document.querySelector(".profile__description");
 
 let selectedCard, selectedCardId;
 
+
+
 api
   .getUserInfo()
   .then((userData) => {
@@ -92,17 +94,7 @@ api
     console.log(`Error: ${err}`);
   });
 
-api
-  .editAvatar({
-    avatar: avatarLinkInput.value,
-  })
-  .then((userData) => {
-    const avatarImage = document.querySelector(".profile__avatar");
-    avatarImage.src = userData.avatar;
-  })
-  .catch((err) => {
-    console.log(`Error: ${err}`);
-  });
+
 
 api
   .getInitialCards()
@@ -179,6 +171,9 @@ function handleProfileFormSubmit(evt) {
     .then((userData) => {
       profileName.textContent = userData.name;
       profileDescription.textContent = userData.about;
+      editProfileForm.reset();
+      resetValidation(editProfileForm, validationConfig);
+
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
@@ -204,6 +199,8 @@ function handleAvatarFormSubmit(evt) {
     .then((userData) => {
       const avatarImage = document.querySelector(".profile__avatar");
       avatarImage.src = userData.avatar;
+      avatarFormElement.reset();
+      resetValidation(avatarFormElement, validationConfig);
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
@@ -221,13 +218,12 @@ function handleNewPostFormSubmit(evt) {
   setBtnText(submitBtn, true, "Saving...", "Save");
 
   api
-    .createCard({
-      name: nameInput.value,
-      link: linkInput.value,
-    })
+    .createCard(nameInput.value, linkInput.value)
     .then((cardData) => {
       const cardElement = getCardElement(cardData);
       cardList.prepend(cardElement);
+      newPostFormElement.reset();
+      resetValidation(newPostFormElement, validationConfig);
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
@@ -237,8 +233,8 @@ function handleNewPostFormSubmit(evt) {
       closeModal(newPostModal);
     });
 
-  evt.target.reset();
-  disableBtnState(cardSubmitBtn);
+
+
 }
 
 function handleDeleteSubmit(evt, cardElement) {
@@ -281,21 +277,8 @@ editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
-// Create the submit listener.
-addCardFormElement.addEventListener("submit", function (evt) {
-  evt.preventDefault();
 
-  const cardElement = getCardElement({
-    name: nameInput.value,
-    link: linkInput.value,
-  });
 
-  cardList.prepend(cardElement);
-  evt.target.reset();
-  disableBtnState(cardSubmitBtn);
-  closeModal(newPostModal);
-  addCardFormElement.reset();
-});
 
 const modalOverlay = document.querySelector("#modal__overlay");
 
