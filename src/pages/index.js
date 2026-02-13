@@ -10,7 +10,7 @@ import { setBtnText } from "../../utils/helpers.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "9a0ec663-61a3-48f8-9cd5-f2a666bc8cc7",
+    authorization: "562540d3-a9fc-4e0d-a258-1ea982846aa9",
     "Content-Type": "application/json",
   },
 });
@@ -39,18 +39,14 @@ const avatarModal = document.querySelector("#avatar-modal");
 const avatarCloseBtn = avatarModal.querySelector(".modal__close-btn");
 
 const avatarFormElement = avatarModal.querySelector(".modal__form");
-const avatarSubmitBtn = avatarModal.querySelector(".modal__save-btn");
 const avatarLinkInput = avatarModal.querySelector("#profile-avatar-input");
 
 //Delete Modal Elements
 const deleteModal = document.querySelector("#delete-modal");
-const deleteConfirmBtn = deleteModal.querySelector(".modal__delete-btn");
 const deleteCancelBtn = deleteModal.querySelector(".modal__cancel-btn");
 const deleteCloseBtn = deleteModal.querySelector(".modal__close-delete");
 const deleteFormElement = deleteModal.querySelector(".modal__form-close");
-const disableBtnState = (buttonEl) => {
-  buttonEl.disabled = true;
-};
+
 
 //New Post modal elements
 const newPostBtn = document.querySelector(".profile__add-btn");
@@ -60,7 +56,6 @@ const newPostFormElement = newPostModal.querySelector(".modal__form");
 
 
 const addCardFormElement = newPostModal.querySelector(".modal__form");
-const cardSubmitBtn = newPostModal.querySelector(".modal__save-btn");
 const nameInput = newPostModal.querySelector("#profile-caption-input");
 const linkInput = newPostModal.querySelector("#image-link-input");
 
@@ -89,10 +84,14 @@ api
     profileName.textContent = userData.name;
     profileDescription.textContent = userData.about;
     avatarImage.src = userData.avatar;
+
   })
   .catch((err) => {
     console.log(`Error: ${err}`);
   });
+
+
+
 
 
 
@@ -103,6 +102,7 @@ api
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
       cardList.prepend(cardElement);
+
     });
   })
   .catch((err) => {
@@ -174,6 +174,7 @@ function handleProfileFormSubmit(evt) {
       editProfileForm.reset();
       resetValidation(editProfileForm, validationConfig);
 
+
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
@@ -201,13 +202,14 @@ function handleAvatarFormSubmit(evt) {
       avatarImage.src = userData.avatar;
       avatarFormElement.reset();
       resetValidation(avatarFormElement, validationConfig);
+      closeModal(avatarModal);
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
     })
     .finally(() => {
       submitBtn.textContent = "Save";
-      closeModal(avatarModal);
+
     });
 }
 
@@ -224,13 +226,14 @@ function handleNewPostFormSubmit(evt) {
       cardList.prepend(cardElement);
       newPostFormElement.reset();
       resetValidation(newPostFormElement, validationConfig);
+      closeModal(newPostModal);
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
     })
     .finally(() => {
       submitBtn.textContent = "Save";
-      closeModal(newPostModal);
+
     });
 
 
@@ -248,13 +251,14 @@ function handleDeleteSubmit(evt, cardElement) {
     .then(() => {
       selectedCardId.remove();
       closeModal(deleteModal);
+
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
     })
     .finally(() => {
       submitBtn.textContent = "Delete";
-      closeModal(deleteModal);
+
     });
 }
 
@@ -339,6 +343,9 @@ function getCardElement(data) {
   const deleteButton = cardElement.querySelector(".card__delete-btn");
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
+  data.isLiked? likeButton.classList.add("card__like-btn_active") : likeButton.classList.remove("card__like-btn_active");
+
+
 
   cardTitle.textContent = data.name;
   cardImage.src = data.link;
@@ -350,9 +357,12 @@ function getCardElement(data) {
     handleDeleteCard(evt, cardElement, data._id),
   );
 
+
   cardImage.addEventListener("click", (evt) => handleImageClick(evt, data));
 
   return cardElement;
 }
+
+
 
 enableValidation(validationConfig);
