@@ -9,8 +9,6 @@ export const validationConfig = {
   errorClass: "modal__error",
 };
 
-
-
 const showInputError = (formEl, inputEl, errorMessage) => {
   const errorMessageID = inputEl.id + "-error";
   const errorMessageElement = document.querySelector(`#${errorMessageID}`);
@@ -46,8 +44,6 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
-
-
 export const disableBtnState = (buttonEl) => {
   buttonEl.disabled = true;
 };
@@ -60,11 +56,12 @@ export const resetValidation = (formEl, config) => {
   toggleButtonState(inputList, buttonElement); // <-- reset button state
 };
 
-
 const setEventListeners = (formElement, config) => {
-  const submitButtonSelector = formElement.querySelector(config.submitButtonSelector);
+  const submitButtonSelector = formElement.querySelector(
+    config.submitButtonSelector,
+  );
   const inputList = Array.from(
-    formElement.querySelectorAll(config.inputSelector)
+    formElement.querySelectorAll(config.inputSelector),
   );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
   console.log(inputList);
@@ -95,5 +92,3 @@ export const enableValidation = (config) => {
     // Form submission logic
   });
 };
-
-
