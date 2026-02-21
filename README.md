@@ -18,10 +18,10 @@ Spots is an image sharing website that allows users to upload and like other use
 
  
 
-## Video link: 
+##Demo 
 
 Link to video description of Spots :
 
-https://drive.google.com/file/d/1Pa4AaLYSXVTADjIOPjBxrp8c-APG9ciP/view?usp=drive_link
+https://www.veed.io/view/9c132ec0-8072-4e2a-8b87-3e10016691b1?panel=share
 
-(The sound would not record because the snipping tool app just doesn't allow it I guess ?  )
+

@@ -14,9 +14,11 @@
 
 .card__like-btn {
   height: 20px;
-  width: 22.5px;
+  width: 23.5px;
   background-image: url(../images/like_icon.svg);
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: auto;
   border: none;
   cursor: pointer;
   opacity: 40%;
@@ -44,6 +46,7 @@
 
 .card__title {
   font-size: 20px;
+  padding:2px;
   font-family: Poppins, sans-serif;
   font-weight: 500;
   margin: 0;
